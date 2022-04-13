@@ -54,7 +54,7 @@ def brands_analysis():
         buying_choice.update({heading: most_popular})
 
     no_people = int_column.count(0) + int_column.count(1)
-    
+
     print("  Question 1:")
     print("  -----------")
     print("  Which of the following brands do you buy?")
@@ -139,7 +139,7 @@ def new_cereal_considerations():
         int_column = [int(num) for num in column]
         most_popular = sum(int_column)
         option_dict.update({heading: most_popular})
-    
+
     print("  Question 3:")
     print("  -----------")
     print("  What do you consider when picking a new cereal?")
@@ -161,7 +161,7 @@ def new_cereal_considerations():
     print(f"  Healthier Option: {healthier_option_value}pts \n")
 
     top_consideration = max(option_dict, key=option_dict.get)
-    
+
     print(f"  This indicates customers consider {top_consideration} as the")
     print("  main consideration when choosing a new cereal.\n")
 
@@ -171,7 +171,7 @@ def move_on():
     Function that allows user to move onto the next question and
     analyse the data.
     """
-    next_question = input("  Press enter to continue \n")
+    input("  Press enter to continue \n")
 
 
 def main():
@@ -180,7 +180,8 @@ def main():
     """
     print("  Survey on cereal buying customers to ascertain favoured")
     print("  brands, if they would change there current pattern and if")
-    print("  so what considerations they would make in picking a new cereal. \n")
+    print("  so what considerations they would make in picking a new")
+    print("  cereal. \n")
     print("  We have the following results for you to view.\n")
     move_on()
     print("  *************************")
