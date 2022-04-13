@@ -170,15 +170,17 @@ def main():
     """
     Executes all program functions.
     """
-    
-    print("The survey has been carried out as requested.")
-    print("we have the following results for you to view.\n")
+    print("Survey on cereal buying customers to ascertain favoured")
+    print("brands, if they would change there current pattern and if")
+    print("so what considerations they would make in picking a new cereal. \n")
+    print("We have the following results for you to view.\n")
     print("Getting results for you now... \n")
     brands_analysis()
     move_on()
     buying_choice_anaylsis()
     move_on()
     new_cereal_considerations()
+    print("***** END OF REPORT *****")
 
 
 main()
