@@ -17,10 +17,10 @@ SHEET = GSPREAD_CLIENT.open("cereal_survey_results")
 
 def calc_market_share(value, no_people):
     """
-    Function calculates a percentage of the market share - based 
+    Function calculates a percentage of the market share - based
     on the survey size.
     """
-    
+
     survey_coverage = no_people
     market_share = (value / survey_coverage) * 100
 
@@ -37,7 +37,7 @@ def brands_analysis():
     - Quaker
     - Other brands
     """
-    
+
     headings = SHEET.worksheet('cereal_brands').row_values(1)
     choice = SHEET.worksheet('cereal_brands')
 
@@ -163,7 +163,7 @@ def move_on():
     Function that allows user to move onto the next question and
     analyse the data.
     """
-    next_question = input("Press enter to continue")
+    next_question = input("Press enter to continue \n")
 
 
 def main():
