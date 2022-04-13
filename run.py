@@ -57,6 +57,7 @@ def brands_analysis():
     # print(f"The survey covered a total of {no_people} people.")
     
     print("Question 1:")
+    print("-----------")
     print("Which of the following brands do you buy?")
     print("The options were a)Kellogs b)Nestle c)Quaker d)Other \n")
 
@@ -69,7 +70,8 @@ def brands_analysis():
     nestle_perc = calc_market_share(nestle_value, no_people)
     quaker_perc = calc_market_share(quaker_value, no_people)
     other_perc = calc_market_share(other_value, no_people)
-
+    print("Results:")
+    print("--------")
     print("Their answers indicate the market share is divided as below;\n")
     print(f"Kellogs has a {kellogs_perc}% share ({kellogs_value} / {no_people} people surveyed)")
     print(f"Nestle has a {nestle_perc}% share ({nestle_value} / {no_people})")
@@ -85,6 +87,7 @@ def buying_choice_anaylsis():
     same cereal everytime they shop of cereals.
     """
     print("Question 2:")
+    print("-----------")
     print("Would you consider changing to a different cereal in the future?")
     print("The options were a) Yes b) No \n")
     headings = SHEET.worksheet('always_buy_the_same').row_values(1)
@@ -106,6 +109,8 @@ def buying_choice_anaylsis():
     yes = buying_choice["Yes"]
     no = buying_choice["No"]
 
+    print("Results:")
+    print("--------")
     print(f"The results indicate {yes}% of people stick to the same brand.")
     print(f"Whereas {no}% of people will vary the cereals they buy.\n")
 
@@ -136,6 +141,7 @@ def new_cereal_considerations():
         option_dict.update({heading: most_popular})
     
     print("Question 3:")
+    print("-----------")
     print("What do you consider when picking a new cereal?")
     print("The options were a)Price b)Packaging c)Box Size d)Healthier Choice \n")
     print("We asked the participants to indicate the most likely")
@@ -146,7 +152,9 @@ def new_cereal_considerations():
     packaging_value = option_dict['Packaging']
     box_size_value = option_dict['Box Size']
     healthier_option_value = option_dict['Healthier Choice']
-    print("The scores were as follows;")
+    print("Results:")
+    print("--------")
+    print("The results were as follows;")
     print(f"Price: {price_value}pts (out of a possible maximum of 60)")
     print(f"Packaging: {packaging_value}pts")
     print(f"Box Size: {box_size_value}pts")
