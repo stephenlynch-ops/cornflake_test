@@ -19,10 +19,34 @@ def brands_analysis():
     """
     Returns analysis on the brands question.
     """
-    brands = SHEET.worksheet('cereal_brands')
-    data = brands.get_all_values()
+    headings = SHEET.worksheet('cereal_brands').row_values(1)
+    choice = SHEET.worksheet('cereal_brands')
 
-    print(data)
+    buying_choice = {}
+
+    columns = []
+    for ind in range(1, 5):
+        column = choice.col_values(ind)
+        columns.append(column[-9:])
+    
+    for heading, column in zip(headings, columns):
+        int_column = [int(num) for num in column]
+        most_popular = int_column.count(1)
+        buying_choice.update({heading: most_popular})
+
+    print(buying_choice)
+
+    popu_choice = max(buying_choice, key=buying_choice.get)
+    popu_value = max(buying_choice.values())
+
+    least_popu = min(buying_choice, key=buying_choice.get)
+    least_value = min(buying_choice.values())
+
+    print(f"The most popular choice of cereal brand is {popu_choice},")
+    print(f"with {popu_value} out of 10 people voting it there go to brand.\n")
+
+    print(f"The least popular choice of cereal brand is {least_popu},")
+    print(f"with {least_value} out of 10 people voting it there go to brand.\n")
 
 
 def types_analysis():
@@ -64,8 +88,46 @@ def buying_choice_anaylsis():
     print(yes)
     print(no)
 
-    print(f"The results show that {yes}% of people will always buy the same cereal.")
-    print(f"Whereas {no}% of people will vary the cereals they buy.")
+    print(f"The results show that {yes}% of people will always buy the same cereal.\n")
+    print(f"Whereas {no}% of people will vary the cereals they buy.\n")
     
 
-buying_choice_anaylsis()
+def test_function():
+    headings = SHEET.worksheet('cereal_brands').row_values(1)
+    choice = SHEET.worksheet('cereal_brands')
+
+    buying_choice = {}
+
+    columns = []
+    for ind in range(1, 5):
+        column = choice.col_values(ind)
+        columns.append(column[-9:])
+    
+    for heading, column in zip(headings, columns):
+        int_column = [int(num) for num in column]
+        most_popular = int_column.count(1)
+        buying_choice.update({heading: most_popular})
+
+    print(buying_choice)
+
+    sorted_dict = dict(sorted(buying_choice.items(), key=lambda x: x[1]))
+    print(sorted_dict)
+
+    print(f"The most popular choice of cereal brand is {sorted_dict},")
+    print(f"with {popu_value} out of 10 people voting it there go to brand.\n")
+
+    print(f"The least popular choice of cereal brand is {least_popu},")
+    print(f"with {least_value} out of 10 people voting it there go to brand.\n")
+
+
+def main():
+    """
+    Executes all program functions.
+    """
+    print("Following the survey carried out on 10 cereal customers")
+    print("we have the following results for you to view.\n")
+    print("When asked for their favourite cereal brand the results were...")
+    brands_analysis()
+
+
+test_function()
