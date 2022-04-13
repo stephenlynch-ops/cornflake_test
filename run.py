@@ -54,12 +54,11 @@ def brands_analysis():
         buying_choice.update({heading: most_popular})
 
     no_people = int_column.count(0) + int_column.count(1)
-    # print(f"The survey covered a total of {no_people} people.")
     
-    print("Question 1:")
-    print("-----------")
-    print("Which of the following brands do you buy?")
-    print("The options were a)Kellogs b)Nestle c)Quaker d)Other \n")
+    print("  Question 1:")
+    print("  -----------")
+    print("  Which of the following brands do you buy?")
+    print("  The options were a)Kellogs b)Nestle c)Quaker d)Other \n")
 
     kellogs_value = buying_choice['Kellogs']
     nestle_value = buying_choice['Nestle']
@@ -70,13 +69,13 @@ def brands_analysis():
     nestle_perc = calc_market_share(nestle_value, no_people)
     quaker_perc = calc_market_share(quaker_value, no_people)
     other_perc = calc_market_share(other_value, no_people)
-    print("Results:")
-    print("--------")
-    print("Their answers indicate the market share is divided as below;\n")
-    print(f"Kellogs has a {kellogs_perc}% share ({kellogs_value} / {no_people} people surveyed)")
-    print(f"Nestle has a {nestle_perc}% share ({nestle_value} / {no_people})")
-    print(f"Quaker has a {quaker_perc}% share ({quaker_value} / {no_people})")
-    print(f"Other brands have a {other_perc}% share ({other_value} / {no_people}) \n")
+    print("  Results:")
+    print("  --------")
+    print("  Their answers indicate the market share is divided as below;\n")
+    print(f"  Kellogs has a {kellogs_perc}% share ({kellogs_value} / {no_people} people surveyed)")
+    print(f"  Nestle has a {nestle_perc}% share ({nestle_value} / {no_people})")
+    print(f"  Quaker has a {quaker_perc}% share ({quaker_value} / {no_people})")
+    print(f"  Other brands have a {other_perc}% share ({other_value} / {no_people}) \n")
 
     return no_people
 
@@ -86,10 +85,10 @@ def buying_choice_anaylsis():
     Returns analysis on how likely the customers are to buy the
     same cereal everytime they shop of cereals.
     """
-    print("Question 2:")
-    print("-----------")
-    print("Would you consider changing to a different cereal in the future?")
-    print("The options were a) Yes b) No \n")
+    print("  Question 2:")
+    print("  -----------")
+    print("  Would you consider changing to a different cereal in the future?")
+    print("  The options were a) Yes b) No \n")
     headings = SHEET.worksheet('always_buy_the_same').row_values(1)
     choice = SHEET.worksheet('always_buy_the_same')
 
@@ -109,10 +108,10 @@ def buying_choice_anaylsis():
     yes = buying_choice["Yes"]
     no = buying_choice["No"]
 
-    print("Results:")
-    print("--------")
-    print(f"The results indicate {yes}% of people stick to the same brand.")
-    print(f"Whereas {no}% of people will vary the cereals they buy.\n")
+    print("  Results:")
+    print("  --------")
+    print(f"  The results indicate {yes}% of people stick to the same brand.")
+    print(f"  Whereas {no}% of people will vary the cereals they buy.\n")
 
 
 def new_cereal_considerations():
@@ -140,30 +139,30 @@ def new_cereal_considerations():
         most_popular = sum(int_column)
         option_dict.update({heading: most_popular})
     
-    print("Question 3:")
-    print("-----------")
-    print("What do you consider when picking a new cereal?")
-    print("The options were a)Price b)Packaging c)Box Size d)Healthier Choice \n")
-    print("We asked the participants to indicate the most likely")
-    print("consideration with a 3, the next most likely with a 2. The next ")
-    print("most likely with a 1 and the lowest consideration with a 0.\n")
+    print("  Question 3:")
+    print("  -----------")
+    print("  What do you consider when picking a new cereal?")
+    print("  The options were a)Price b)Packaging c)Box Size d)Healthier Choice \n")
+    print("  We asked the participants to indicate the most likely")
+    print("  consideration with a 3, the next most likely with a 2. The next ")
+    print("  most likely with a 1 and the lowest consideration with a 0.\n")
 
     price_value = option_dict['Price']
     packaging_value = option_dict['Packaging']
     box_size_value = option_dict['Box Size']
     healthier_option_value = option_dict['Healthier Choice']
-    print("Results:")
-    print("--------")
-    print("The results were as follows;")
-    print(f"Price: {price_value}pts (out of a possible maximum of 60)")
-    print(f"Packaging: {packaging_value}pts")
-    print(f"Box Size: {box_size_value}pts")
-    print(f"Healthier Option: {healthier_option_value}pts \n")
+    print("  Results:")
+    print("  --------")
+    print("  The results were as follows;")
+    print(f"  Price: {price_value}pts (out of a possible maximum of 60)")
+    print(f"  Packaging: {packaging_value}pts")
+    print(f"  Box Size: {box_size_value}pts")
+    print(f"  Healthier Option: {healthier_option_value}pts \n")
 
     top_consideration = max(option_dict, key=option_dict.get)
-    # print("Maximum value:", top_consideration)
-    print(f"This indicates that customers consider {top_consideration} as the main")
-    print("consideration when choosing a new cereal.\n")
+    
+    print(f"  This indicates that customers consider {top_consideration} as the main")
+    print("  consideration when choosing a new cereal.\n")
 
 
 def move_on():
@@ -171,27 +170,29 @@ def move_on():
     Function that allows user to move onto the next question and
     analyse the data.
     """
-    next_question = input("Press enter to continue \n")
+    next_question = input("  Press enter to continue \n")
 
 
 def main():
     """
     Executes all program functions.
     """
-    print("Survey on cereal buying customers to ascertain favoured")
-    print("brands, if they would change there current pattern and if")
-    print("so what considerations they would make in picking a new cereal. \n")
-    print("We have the following results for you to view.\n")
-    print("Getting results for you now... \n")
-    print("*************************")
+    print("  Survey on cereal buying customers to ascertain favoured")
+    print("  brands, if they would change there current pattern and if")
+    print("  so what considerations they would make in picking a new cereal. \n")
+    print("  We have the following results for you to view.\n")
+    move_on()
+    print("  *************************")
+    print("  Getting results for you now... \n")
+    print("  *************************")
     brands_analysis()
-    print("*************************")
+    print("  *************************")
     move_on()
     buying_choice_anaylsis()
-    print("*************************")
+    print("  *************************")
     move_on()
     new_cereal_considerations()
-    print("***** END OF REPORT *****")
+    print("  ***** END OF REPORT *****")
 
 
 main()
