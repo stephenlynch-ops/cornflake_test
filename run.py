@@ -72,10 +72,11 @@ def brands_analysis():
     print("  Results:")
     print("  --------")
     print("  Their answers indicate the market share is divided as below;\n")
-    print(f"  Kellogs has a {kellogs_perc}% share ({kellogs_value} / {no_people} people surveyed)")
-    print(f"  Nestle has a {nestle_perc}% share ({nestle_value} / {no_people})")
-    print(f"  Quaker has a {quaker_perc}% share ({quaker_value} / {no_people})")
-    print(f"  Other brands have a {other_perc}% share ({other_value} / {no_people}) \n")
+    print("  The results show a brands market share (No votes / Total votes)")
+    print(f"  Kellogs: {kellogs_perc}% share ({kellogs_value}/{no_people})")
+    print(f"  Nestle: {nestle_perc}% share ({nestle_value}/{no_people})")
+    print(f"  Quaker: {quaker_perc}% share ({quaker_value}/{no_people})")
+    print(f"  Other brands: {other_perc}% share ({other_value}/{no_people})\n")
 
     return no_people
 
@@ -142,7 +143,7 @@ def new_cereal_considerations():
     print("  Question 3:")
     print("  -----------")
     print("  What do you consider when picking a new cereal?")
-    print("  The options were a)Price b)Packaging c)Box Size d)Healthier Choice \n")
+    print("  The options were a)Price b)Packaging c)Box Size d)Healthier\n")
     print("  We asked the participants to indicate the most likely")
     print("  consideration with a 3, the next most likely with a 2. The next ")
     print("  most likely with a 1 and the lowest consideration with a 0.\n")
@@ -161,8 +162,8 @@ def new_cereal_considerations():
 
     top_consideration = max(option_dict, key=option_dict.get)
     
-    print(f"  This indicates that customers consider {top_consideration} as the main")
-    print("  consideration when choosing a new cereal.\n")
+    print(f"  This indicates customers consider {top_consideration} as the")
+    print("  main consideration when choosing a new cereal.\n")
 
 
 def move_on():
