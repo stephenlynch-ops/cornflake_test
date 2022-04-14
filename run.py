@@ -46,7 +46,7 @@ def brands_analysis():
     columns = []
     for ind in range(1, 5):
         column = choice.col_values(ind)
-        columns.append(column[-20:])
+        columns.append(column[1:])
 
     for heading, column in zip(headings, columns):
         int_column = [int(num) for num in column]
@@ -55,8 +55,8 @@ def brands_analysis():
 
     no_people = int_column.count(0) + int_column.count(1)
 
-    print("  Question 1:")
-    print("  -----------")
+    print("  Question 1: (recap)")
+    print("  -------------------")
     print("  Which of the following brands do you buy?")
     print("  The options were a)Kellogs b)Nestle c)Quaker d)Other \n")
 
@@ -78,6 +78,9 @@ def brands_analysis():
     print(f"  Quaker: {quaker_perc}% share ({quaker_value}/{no_people})")
     print(f"  Other brands: {other_perc}% share ({other_value}/{no_people})\n")
 
+    top_brand = max(buying_choice, key=buying_choice.get)
+    print(f"  This indicates that {top_brand} are the market leader.\n")
+
     return no_people
 
 
@@ -86,8 +89,8 @@ def buying_choice_anaylsis():
     Returns analysis on how likely the customers are to buy the
     same cereal everytime they shop of cereals.
     """
-    print("  Question 2:")
-    print("  -----------")
+    print("  Question 2: (recap)")
+    print("  -------------------")
     print("  Would you consider changing to a different cereal in the future?")
     print("  The options were a) Yes b) No \n")
     headings = SHEET.worksheet('always_buy_the_same').row_values(1)
@@ -98,7 +101,7 @@ def buying_choice_anaylsis():
     columns = []
     for ind in range(1, 3):
         column = choice.col_values(ind)
-        columns.append(column[-20:])
+        columns.append(column[1:])
 
     for heading, column in zip(headings, columns):
         int_column = [int(num) for num in column]
@@ -111,8 +114,24 @@ def buying_choice_anaylsis():
 
     print("  Results:")
     print("  --------")
-    print(f"  The results indicate {yes}% of people stick to the same brand.")
-    print(f"  Whereas {no}% of people will vary the cereals they buy.\n")
+    print(f"  The results indicate {no}% of people stick to the same brand.")
+    print(f"  Whereas {yes}% of people will vary the cereals they buy.\n")
+
+    if yes == 0:
+        print(f"  There is definetly no room for a new brand as {no}% of ")
+        print("  people are unwilling to try a new brand. \n")
+    elif no > yes:
+        print("  There would be room for a new brand to enter this market")
+        print(f"  Although with only {yes}% of customers who would ")
+        print("  potentially be willing to try it. \n")
+    elif no == 0:
+        print("  The results suggest that there is definetly room for a new ")
+        print(f"  brand to enter this market as {yes}% of customers were")
+        print("  willing to change. \n")
+    else:
+        print("  There is definetly room for a new brand to enter the market")
+        print(f"  in fact {yes}% were willing to try a new brand compared to ")
+        print(f"  {no}% who would not be willing to try it. \n")
 
 
 def new_cereal_considerations():
@@ -133,15 +152,15 @@ def new_cereal_considerations():
     columns = []
     for ind in range(1, 5):
         column = choice.col_values(ind)
-        columns.append(column[-20:])
+        columns.append(column[1:])
 
     for heading, column in zip(headings, columns):
         int_column = [int(num) for num in column]
         most_popular = sum(int_column)
         option_dict.update({heading: most_popular})
 
-    print("  Question 3:")
-    print("  -----------")
+    print("  Question 3: (recap)")
+    print("  -------------------")
     print("  What do you consider when picking a new cereal?")
     print("  The options were a)Price b)Packaging c)Box Size d)Healthier\n")
     print("  We asked the participants to indicate the most likely")
@@ -163,7 +182,9 @@ def new_cereal_considerations():
     top_consideration = max(option_dict, key=option_dict.get)
 
     print(f"  This indicates customers consider {top_consideration} as the")
-    print("  main consideration when choosing a new cereal.\n")
+    print("  main consideration when choosing a new cereal. This is ")
+    print("  something a new brand would need to consider when entering the")
+    print("  market or trying to maintain market share. \n")
 
 
 def move_on():
@@ -181,7 +202,8 @@ def main():
     print("  Survey on cereal buying customers to ascertain favoured")
     print("  brands, if they would change there current pattern and if")
     print("  so what considerations they would make in picking a new")
-    print("  cereal. \n")
+    print("  cereal. This is being done to see if there is market space")
+    print("  for a new brand to move into this market. \n")
     print("  We have the following results for you to view.\n")
     move_on()
     print("  *************************")
@@ -198,3 +220,19 @@ def main():
 
 
 main()
+
+# def test_function():
+#     print("  The options were a) Yes b) No \n")
+#     headings = SHEET.worksheet('always_buy_the_same').row_values(1)
+#     choice = SHEET.worksheet('always_buy_the_same')
+
+#     buying_choice = {}
+
+#     columns = []
+#     for ind in range(1, 3):
+#         column = choice.col_values(ind)
+#         columns.append(column[1:])
+#     print(columns)
+
+
+# test_function()
