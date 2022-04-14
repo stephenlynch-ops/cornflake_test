@@ -220,19 +220,3 @@ def main():
 
 
 main()
-
-# def test_function():
-#     print("  The options were a) Yes b) No \n")
-#     headings = SHEET.worksheet('always_buy_the_same').row_values(1)
-#     choice = SHEET.worksheet('always_buy_the_same')
-
-#     buying_choice = {}
-
-#     columns = []
-#     for ind in range(1, 3):
-#         column = choice.col_values(ind)
-#         columns.append(column[1:])
-#     print(columns)
-
-
-# test_function()
