@@ -195,6 +195,33 @@ def move_on():
     input("  Press enter to continue \n")
 
 
+def ready_to_begin():
+    """
+    Allows the user to being the report by pressing 'y'
+    """
+    while True:
+        user_input = input("  Press Y to being report \n")
+        answer = user_input.lower()
+
+        if validate_user_input(answer):
+            break
+
+
+def validate_user_input(value):
+    """
+    Validates the user pressed Y to being the report.
+    """
+    try:
+        if value != 'y':
+            raise ValueError(
+                f"  You pressed {value}...this is not a valid selection")
+    except ValueError:
+        print("  Incorrent key pressed. Please check before pressing.")
+        return False
+
+    return True
+
+
 def main():
     """
     Executes all program functions.
@@ -205,7 +232,7 @@ def main():
     print("  cereal. This is being done to see if there is market space")
     print("  for a new brand to move into this market. \n")
     print("  We have the following results for you to view.\n")
-    move_on()
+    ready_to_begin()
     print("  *************************")
     print("  Getting results for you now... \n")
     print("  *************************")
