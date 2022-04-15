@@ -168,12 +168,12 @@ Although no code was directly lifted from these sites, I certainly did modify so
 
 # Screenshots
 
-<img src="./assets/images/intro_screenshot.png" alt="Screenshot showing the deployed with the 'Intro' showing" style="height: 330px; width: 420px">
+<img src="./assets/images/intro_screenshot.png" alt="Screenshot showing the deployed with the 'Intro' showing" style="height: 330px; width: 370px">
 
-<img src="./assets/images/user_input_error.png" alt="Screenshot showing the deployed with a user input error" style="height: 200px; width: 420px">
+<img src="./assets/images/user_input_error.png" alt="Screenshot showing the deployed with a user input error" style="height: 70px; width: 330px">
 
-<img src="./assets/images/question_1_screenshot.png" alt="Screenshot showing the deployed with question 1 recap and data" style="height: 330px; width: 420px">
+<img src="./assets/images/question_1_screenshot.png" alt="Screenshot showing the deployed with question 1 recap and data" style="height: 330px; width: 370px">
 
-<img src="./assets/images/question_2_screenshot.png" alt="Screenshot showing the deployed with question 2 recap and data" style="height: 330px; width: 420px">
+<img src="./assets/images/question_2_screenshot.png" alt="Screenshot showing the deployed with question 2 recap and data" style="height: 330px; width: 370px">
 
-<img src="./assets/images/question_3_screenshot.png" alt="Screenshot showing the deployed with question 3 recap and data" style="height: 330px; width: 420px">
+<img src="./assets/images/question_3_screenshot.png" alt="Screenshot showing the deployed with question 3 recap and data" style="height: 330px; width: 370px">
